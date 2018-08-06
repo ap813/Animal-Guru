@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import Post from './components/Post'
 import PostForm from './components/PostForm'
-import { Provider } from 'react-redux'
-
-import store from './store'
-
-/* Main Container */
+import Home from './components/Home'
+import Router from './Router';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
-      <Provider store={store}>
-        <div className="Middle">
-          <PostForm />
-          <hr />
-          <Post /> 
-        </div>
-      </Provider>
-    );
+      <Router />
+    )
   }
 }
 
+
 export default App;
- 

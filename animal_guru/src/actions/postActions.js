@@ -1,6 +1,6 @@
 import { 
     FETCH_POSTS,
-    NEW_POST
+    NEW_VOLUNTEER
 } from './types'
 
 export const fetchPosts = () => dispatch => {
@@ -10,9 +10,11 @@ export const fetchPosts = () => dispatch => {
         type: FETCH_POSTS,
         payload: post
     }))
+    .catch(error => console.log(error))
 }
 
-export const createPost = (postData) => dispatch => {
+export const createVolunteer = (postData) => dispatch => {
+    console.log("Create a New Volunteer")
     fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
@@ -22,7 +24,8 @@ export const createPost = (postData) => dispatch => {
         })
         .then(res => res.json())
         .then(post => dispatch({
-            type: NEW_POST,
+            type: NEW_VOLUNTEER,
             payload: post
         }))
+        .catch(error => console.log(error))
 }

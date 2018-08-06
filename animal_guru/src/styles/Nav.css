@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400i');
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #17202A;
+    position: fixed;
+    overflow: auto;
+    color: #F7F9F9;
+    text-decoration: none;
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 26px;
+    font-family: 'Merriweather', serif;
+    color: #F7F9F9;
+}
+
+li b {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: underline;
+    font-size: 44px;
+    font-family: 'Merriweather', serif;
+    color: #F7F9F9;
+}
+
+/* changes the color when hovering */
+li a:hover {
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: #F7F9F9;
+}
+
+.Coloring {
+    width: 100%;
+    height: 5px;
+    background-color: #FADBD8;
+}

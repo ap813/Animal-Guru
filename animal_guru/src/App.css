@@ -1,4 +1,10 @@
 
 .Middle {
     text-align: center;
+    align-content: center;
+}
+
+.cancelDefault {
+    margin: 0;
+    padding: 0;
 }

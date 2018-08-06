@@ -1,6 +1,6 @@
 import { 
-    FETCH_POSTS, 
-    NEW_POST
+    FETCH_POSTS,
+    NEW_VOLUNTEER
 } from '../actions/types'
 
 const initialState = {
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
                 ...state,
                 items: action.payload
             }
-        case NEW_POST:
+        case NEW_VOLUNTEER:
             return {
                 ...state,
                 item: action.payload

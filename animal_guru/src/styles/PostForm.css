@@ -1,0 +1,12 @@
+.BoxForm {
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px;
+    background-color: #FBFCFC;
+    border-color: black;
+    border-width: 2px;
+}
+
+.Middle {
+    text-align: center;
+}
