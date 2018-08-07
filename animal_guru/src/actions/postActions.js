@@ -1,6 +1,7 @@
 import { 
     FETCH_POSTS,
-    NEW_VOLUNTEER
+    NEW_VOLUNTEER,
+    GET_PUPPIES
 } from './types'
 
 export const fetchPosts = () => dispatch => {
@@ -14,7 +15,6 @@ export const fetchPosts = () => dispatch => {
 }
 
 export const createVolunteer = (postData) => dispatch => {
-    console.log("Create a New Volunteer")
     fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
@@ -28,4 +28,18 @@ export const createVolunteer = (postData) => dispatch => {
             payload: post
         }))
         .catch(error => console.log(error))
+}
+
+export const getPuppies = () => dispatch => {
+    fetch('http://animalguru.store/getDogs', {
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(dogs => dispatch({
+        type: GET_PUPPIES,
+        payload: dogs.dogs
+    }))
+    .catch(error => console.log(error))
 }

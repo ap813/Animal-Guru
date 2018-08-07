@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
 import App from './App'
-import Router from './Router'
 
 /* Main Container */
 

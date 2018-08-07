@@ -1,2 +1,3 @@
 export const FETCH_POSTS = 'FETCH_POSTS'
 export const NEW_VOLUNTEER = 'NEW_VOLUNTEER'
+export const GET_PUPPIES = 'GET_PUPPIES'

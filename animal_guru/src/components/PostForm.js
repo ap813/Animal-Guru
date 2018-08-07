@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import {createVolunteer} from '../actions/postActions'
 import '../styles/PostForm.css';
 
+import Navbar from './Navbar'
+
 import 'bootstrap';
 
 class PostForm extends Component {
@@ -50,12 +52,17 @@ class PostForm extends Component {
 
     render() {
         return (
+            <div>
+            <Navbar />
+
             <div class="container-fluid">
+            <div className="Margining">
                 <div class="jumbotron">
                     <div className="Middle">
                         <h1>Participate</h1>
                         <p><em>We love our Volunteers!</em></p>
                     </div>
+                </div>
                 </div>
                 
                 <div class="BoxForm">
@@ -147,6 +154,7 @@ class PostForm extends Component {
             </form>
             </div>
             </div> 
+            </div>
         )
     }
 }

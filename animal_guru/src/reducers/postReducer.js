@@ -1,11 +1,13 @@
 import { 
     FETCH_POSTS,
-    NEW_VOLUNTEER
+    NEW_VOLUNTEER,
+    GET_PUPPIES
 } from '../actions/types'
 
 const initialState = {
     items: [],
-    item: {}
+    item: {},
+    dogs: []
 }
 
 export default function(state = initialState, action) {
@@ -19,6 +21,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 item: action.payload
+            }
+        case GET_PUPPIES:
+            return {
+                ...state,
+                dogs: action.payload
             }
         default:
             return state
