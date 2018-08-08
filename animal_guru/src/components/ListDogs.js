@@ -41,7 +41,7 @@ class ListDogs extends Component {
             <div class="row">
             {
               this.props.dogs.map( (dog, i) => {
-                const source = "http://animalguru.store/pics/" + dog.breed + "-" + dog.name + ".jpg"
+                const source = "http://animalguru.store/dogs/" + dog.breed + "-" + dog.name + ".jpg"
                 return (
                   <div class="col-md-4">
                     <div class="card bg-light">

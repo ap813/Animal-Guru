@@ -32,7 +32,7 @@ export default function(state = initialState, action) {
         case GET_KITTENS:
             return {
                 ...state,
-                cat: action.payload
+                cats: action.payload
             }
         default:
             return state
