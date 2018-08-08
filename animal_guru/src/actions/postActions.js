@@ -1,7 +1,8 @@
 import { 
     FETCH_POSTS,
     NEW_VOLUNTEER,
-    GET_PUPPIES
+    GET_PUPPIES,
+    GET_KITTENS
 } from './types'
 
 export const fetchPosts = () => dispatch => {
@@ -40,6 +41,20 @@ export const getPuppies = () => dispatch => {
     .then(dogs => dispatch({
         type: GET_PUPPIES,
         payload: dogs.dogs
+    }))
+    .catch(error => console.log(error))
+}
+
+export const getKittens = () => dispatch => {
+    fetch('http://animalguru.store/getCats', {
+        headers: {
+            "Content-Type" : "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(cats => dispatch({
+        type: GET_KITTENS,
+        payload: cats.cats
     }))
     .catch(error => console.log(error))
 }

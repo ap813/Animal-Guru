@@ -5,13 +5,14 @@
     background-color: #FBFCFC;
     border-color: black;
     border-width: 2px;
+    margin-bottom: 40%;
 }
 
 .Middle {
     text-align: center;
 }
 
-.Margining {
-    padding-top: 5%;
+.MarginingPostForm {
+    padding-top: 10px;
     height: 100%;
 }

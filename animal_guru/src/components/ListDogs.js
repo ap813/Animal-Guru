@@ -12,10 +12,6 @@ class ListDogs extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      dogs: []
-    }
-
     this.dateDifference = this.dateDifference.bind(this)
   }
 
@@ -35,6 +31,13 @@ class ListDogs extends Component {
         <Navbar />
         <div class="container">
           <div className="Margining">
+
+             <div class="jumbotron">
+                  <div className="Middle">
+                      <h1>Dogs for Adoption</h1>
+                  </div>
+              </div>
+
             <div class="row">
             {
               this.props.dogs.map( (dog, i) => {
@@ -51,8 +54,8 @@ class ListDogs extends Component {
                             Weight: {dog.weight} <br />
                             Max Weight: {dog.fullWeight} <br />
                             Sex: {dog.sex} <br />
-                            Housetrained: {dog.housetrained == 1 ? "YES" : "NO"} <br />
-                            Fixed: {dog.fix == 1 ? "YES" : "NO"} <br />
+                            Housetrained: {dog.housetrained === 1 ? "YES" : "NO"} <br />
+                            Fixed: {dog.fix === 1 ? "YES" : "NO"} <br />
                             </p>
                             <div class="Middle">
                             <a href="#" class="btn btn-secondary">View Profile</a>

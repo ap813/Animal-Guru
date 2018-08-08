@@ -55,8 +55,8 @@ class PostForm extends Component {
             <div>
             <Navbar />
 
-            <div class="container-fluid">
-            <div className="Margining">
+            <div class="container">
+            <div className="MarginingPostForm">
                 <div class="jumbotron">
                     <div className="Middle">
                         <h1>Participate</h1>
@@ -150,7 +150,9 @@ class PostForm extends Component {
                 <input type="text" name="zip" class="form-control" id="inputZip" value={this.state.zip} onChange={this.onChange}/>
                 </div>
             </div>
-            <button type="submit" class="btn btn-info">Sign in</button>
+            <div className="Middle"> 
+             <button type="submit" class="btn btn-info">Sign in</button>
+             </div>
             </form>
             </div>
             </div> 
