@@ -32,7 +32,7 @@ export const createVolunteer = (postData) => dispatch => {
 }
 
 export const getPuppies = () => dispatch => {
-    fetch('http://animalguru.store/getDogs', {
+    fetch('https://animalguru.store/getDogs', {
         headers: {
             "Content-Type" : "application/json"
         }
@@ -46,7 +46,7 @@ export const getPuppies = () => dispatch => {
 }
 
 export const getKittens = () => dispatch => {
-    fetch('http://animalguru.store/getCats', {
+    fetch('https://animalguru.store/getCats', {
         headers: {
             "Content-Type" : "application/json"
         }
