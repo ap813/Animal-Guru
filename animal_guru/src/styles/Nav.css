@@ -12,19 +12,32 @@ ul {
 }
 
 li {
-    display: inline;
+    float: left;
+    padding-top: 26px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+lu {
+    float: right;
+    padding-top: 26px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+lh {
+    float: left;
+    padding-bottom: 10px;
 }
 
 li a {
-    display: inline-block;
-    padding: 8px 16px;
     text-decoration: none;
     font-size: 26px;
     font-family: 'Merriweather', serif;
     color: #F7F9F9;
 }
 
-li b {
+lh b {
     display: inline-block;
     padding: 8px 16px;
     text-decoration: underline;
@@ -33,8 +46,24 @@ li b {
     color: #F7F9F9;
 }
 
+lu a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 26px;
+    font-family: 'Merriweather', serif;
+    color: #F7F9F9;
+    align-self: flex-end;
+}
+
 /* changes the color when hovering */
 li a:hover {
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: #F7F9F9;
+}
+
+lu a:hover {
     font-weight: 700;
     font-size: 30px;
     text-decoration: none;

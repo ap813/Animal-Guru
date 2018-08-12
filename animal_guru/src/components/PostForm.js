@@ -59,7 +59,7 @@ class PostForm extends Component {
             <div className="MarginingPostForm">
                 <div class="jumbotron">
                     <div className="Middle">
-                        <h1>Participate</h1>
+                        <h1>Signup Form</h1>
                         <p><em>We love our Volunteers!</em></p>
                     </div>
                 </div>

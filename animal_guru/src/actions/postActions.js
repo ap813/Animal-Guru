@@ -15,11 +15,12 @@ export const fetchPosts = () => dispatch => {
     .catch(error => console.log(error))
 }
 
+// Make a new Volunteer
 export const createVolunteer = (postData) => dispatch => {
     fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'Content-Type' : 'application/json'
             },
             body: JSON.stringify(postData)
         })
@@ -31,6 +32,7 @@ export const createVolunteer = (postData) => dispatch => {
         .catch(error => console.log(error))
 }
 
+// Get the dogs from the database
 export const getPuppies = () => dispatch => {
     fetch('https://animalguru.store/api/getDogs', {
         headers: {
@@ -45,6 +47,7 @@ export const getPuppies = () => dispatch => {
     .catch(error => console.log(error))
 }
 
+// Get the cats from the database
 export const getKittens = () => dispatch => {
     fetch('https://animalguru.store/api/getCats', {
         headers: {

@@ -9,6 +9,7 @@ import HomePage from './components/Home'
 import PostForm from './components/PostForm'
 import ListDogs from './components/ListDogs'
 import ListCats from './components/ListCats'
+import Volunteer from './components/Volunteer';
 
 /* Main Container */
 
@@ -18,9 +19,10 @@ const Root = ({ store }) => (
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/volunteer" component={PostForm} />
+          <Route exact path="/volunteer" component={Volunteer} />
           <Route exact path="/dogs" component={ListDogs} />
           <Route exact path="/cats" component={ListCats} />
+          <Route exact path="/signup" component={PostForm} />
         </Switch>
       </Router>
     </div>

@@ -81,7 +81,10 @@ app.post('/api/register', function(req, res) {
   const user = {
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    address: req.body.address,
+    state: req.body.state,
+    zip: req.body.zip
   }
 
   // Check to make sure that the email isn't in use
@@ -90,6 +93,7 @@ app.post('/api/register', function(req, res) {
   con.query(check, function(error, result) {
     if(error) {
       res.json({error: error})
+      return;
     }
 
     // Connector will return an array as result,
@@ -100,7 +104,8 @@ app.post('/api/register', function(req, res) {
 
       // Construct Query Insert
       const sql = "insert into users values ('" + user.username + "','" 
-      + user.email + "','" + user.password + "','',false,"+code+");"
+      + user.email + "','" + user.password + "','',false,"+code+",'" 
+      + user.address + "','" + user.state + "','" + user.zip + "');"
 
       // Add the token and the user into the database
       con.query(sql, function(err, result) {
@@ -147,7 +152,7 @@ app.post('/api/verify', function(req, res) {
   }
 
   // Query to check if the code is correct
-  const sql = "select code from users where email='" + user.email + "';"
+  const sql = "select code, verified from users where email='" + user.email + "';"
 
   // Send Query
   con.query(sql, function(err, result){
@@ -155,6 +160,12 @@ app.post('/api/verify', function(req, res) {
     // If result is Equal to 0, then the user doesn't exist
     if (result.length === 0) {
       res.sendStatus(401)
+      return;
+    }
+
+    if (result[0].verified) {
+      res.json({message: "Account already verified"})
+      return;
     }
 
     // Compare the code from the user to the one in the database
@@ -165,6 +176,7 @@ app.post('/api/verify', function(req, res) {
       con.query(update, function(error, resultTwo){
         if (error) {
           res.json({message: "Problem Updating Database"})
+          return;
         }
 
         // Tell the user it was verified
