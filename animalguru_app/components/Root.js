@@ -2,48 +2,25 @@ import React, { Component } from 'react'
 import {
     Text,
     StyleSheet,
-    View
+    View,
+    ImageBackground
 } from 'react-native'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { getPuppies } from '../actions/postActions'
+import { createDrawerNavigator } from 'react-navigation'
+import HomeScreen from './HomeScreen'
+import ListDogs from './ListDogs'
+import ListCats from './ListCats';
 
-class Root extends Component {
 
-  constructor(props) {
-    super(props)
-  }
+const Root = createDrawerNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+  Cats: {
+    screen: ListCats
+  },
+  Dogs: {
+    screen: ListDogs
+  },
+});
 
-  componentWillMount() {
-    // Who let the Dogs out?
-    this.props.getPuppies()
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>
-            React + Redux
-        </Text>
-      </View>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
-
-Root.propTypes = {
-  getPuppies: PropTypes.func.isRequired
-}
-
-const mapStateToProps = state => ({
-  dogs: state.posts.dogs
-})
-
-export default connect(mapStateToProps, { getPuppies })(Root)
+export default Root
