@@ -11,7 +11,6 @@ import {
     Modal
 } from 'react-native'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 
 const {height, width} = Dimensions.get('window')
 
@@ -57,6 +56,7 @@ class ListCats extends Component {
 
     render() {
             return (
+                <ImageBackground style={styles.background} source={require('../assets/animalBackground.jpg')}>
                 <View style={styles.container}>
                     {/* Menu Navigator Icon*/}
                     <TouchableOpacity style={styles.menuBox} onPress={() => this.props.navigation.openDrawer()}>
@@ -97,12 +97,24 @@ class ListCats extends Component {
                             </TouchableOpacity>
 
                             <View style={styles.card}>
-
+                                <Image style={{resizeMode: 'cover', height: height/3}} source={{uri: this.state.cat_image}} />
+                                <Text style={{fontSize: 36, textAlign: 'center'}}>{this.state.cat.name}</Text>
+                                <Text style={{fontSize: 20, marginLeft: 10}}>
+                                    Color: {this.state.cat.color} {'\n'}
+                                    Weight: {this.state.cat.weight} {'\n'}
+                                    Max Weight: {this.state.cat.fullWeight} {'\n'}
+                                    Sex: {this.state.cat.sex} {'\n'}
+                                    Housetrained: {this.state.cat.housetrained ? ('YES') : ('NO')} {'\n'}
+                                    Fixed: {this.state.cat.fix ? ('YES') : ('NO')} {'\n'}
+                                    Declawed: {this.state.cat.declawed ? ('YES') : ('NO')} {'\n'}
+                                    Adoption Fee: $50.00
+                                </Text>
                             </View>
                         </View>
                     </Modal>
                     </ScrollView>
                 </View>
+                </ImageBackground>
             )
     }
 }
@@ -113,8 +125,6 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#77F4C3',
-        opacity: 0.9
     },
     icon: {
         width: 20,
@@ -132,18 +142,18 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     title: {
-        fontSize: 40,
+        fontSize: 42,
         textDecorationLine: 'underline',
         textAlign: 'center',
-        letterSpacing: 2
+        letterSpacing: 2,
+        marginBottom: 5
     },
     card: {
         width: width-20,
-        height: height/2,
+        height: height/1.2,
         backgroundColor: 'white',
         marginHorizontal: 10,
-        marginVertical: 10,
-        borderRadius: 10
+        marginVertical: 10
     },
     card_image: {
         width: width-20,
@@ -159,7 +169,7 @@ const styles = StyleSheet.create({
         left: 0, 
         right: 0, 
         bottom: 0, 
-        justifyContent: 'flex-end', 
+        justifyContent: 'flex-end',
         alignItems: 'center'
     },
     nameFont: {

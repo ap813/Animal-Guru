@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#77F4C3',
+        backgroundColor: '#ECF0F1',
         opacity: 0.8
     },
     icon: {
