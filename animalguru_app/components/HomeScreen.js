@@ -9,13 +9,13 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {getPuppies, getKittens} from '../actions/postActions'
+import { getPuppies, getKittens } from '../actions/postActions'
 
 class HomeScreen extends Component {
 
     static navigationOptions = {
         drawerLabel: 'Home',
-        drawerIcon: ({ tintColor }) => (
+        drawerIcon: ({tintColor}) => (
           <Image
             source={require('../assets/home.png')}
             style={[styles.icon, {tintColor: tintColor}]}
