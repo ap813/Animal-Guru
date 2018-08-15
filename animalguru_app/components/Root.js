@@ -8,7 +8,8 @@ import {
 import { createDrawerNavigator } from 'react-navigation'
 import HomeScreen from './HomeScreen'
 import ListDogs from './ListDogs'
-import ListCats from './ListCats';
+import ListCats from './ListCats'
+import Info from './Info'
 
 
 const Root = createDrawerNavigator({
@@ -20,6 +21,9 @@ const Root = createDrawerNavigator({
   },
   Dogs: {
     screen: ListDogs
+  },
+  Info: {
+    screen: Info
   },
 });
 

@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import {
     Text,
     View,
-    Image,
     StyleSheet,
+    Image,
     TouchableOpacity
 } from 'react-native'
 
-class ListDogs extends Component {
+class Info extends Component {
 
     static navigationOptions = {
-        drawerLabel: 'Dogs',
+        drawerLabel: 'Info',
         drawerIcon: ({ tintColor }) => (
           <Image
-            source={require('../assets/dog.png')}
+            source={require('../assets/info.png')}
             style={[styles.icon, {tintColor: tintColor}]}
           />
         ),
@@ -24,7 +24,7 @@ class ListDogs extends Component {
     }
 
     componentWillMount() {
-        
+
     }
 
     render() {
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ListDogs
+export default Info
