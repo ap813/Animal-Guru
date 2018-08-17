@@ -142,11 +142,11 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     title: {
-        fontSize: 42,
+        fontSize: 32,
         textDecorationLine: 'underline',
         textAlign: 'center',
         letterSpacing: 2,
-        marginBottom: 5
+        fontWeight: 'bold'
     },
     card: {
         width: width-20,

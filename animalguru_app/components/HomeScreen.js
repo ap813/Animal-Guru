@@ -44,7 +44,7 @@ class HomeScreen extends Component {
                         </TouchableOpacity>
 
                         <View style={{flex: 0.8, alignItems: 'center', opacity: 0.9, marginHorizontal: 10}}>
-                            <Text style={{fontSize: 40, textDecorationLine: 'underline', marginTop: 20, marginBottom: 10, color: 'black'}}>Animal Guru</Text>
+                            <Text style={styles.title}>Animal Guru</Text>
                             <Text style={{fontSize: 20, marginTop: 10, marginHorizontal: 15, color: 'black', textAlign: 'center'}}>
                                 Welcome to Animal Guru, we're a no kill shelter that houses
                                 cats and dogs. Take a look around and see if you find any new
@@ -81,7 +81,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10
     },
-
+    title: {
+        fontSize: 36, 
+        textDecorationLine: 'underline', 
+        fontWeight: 'bold',
+        marginTop: 20, 
+        marginBottom: 10, 
+        letterSpacing: 1,
+        color: 'black'
+    }
 })
 
 // Map The Props to the State

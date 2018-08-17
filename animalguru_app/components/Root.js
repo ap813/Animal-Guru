@@ -1,9 +1,4 @@
-import React, { Component } from 'react'
 import {
-    Text,
-    StyleSheet,
-    View,
-    ImageBackground,
     Dimensions
 } from 'react-native'
 import { createDrawerNavigator } from 'react-navigation'
@@ -11,8 +6,9 @@ import HomeScreen from './HomeScreen'
 import ListDogs from './ListDogs'
 import ListCats from './ListCats'
 import Info from './Info'
+import Volunteer from './Volunteer'
 
-const {height, width} = Dimensions.get('window')
+const {width} = Dimensions.get('window')
 
 
 const Root = createDrawerNavigator({
@@ -24,6 +20,9 @@ const Root = createDrawerNavigator({
   },
   Dogs: {
     screen: ListDogs
+  },
+  Volunteer: {
+    screen: Volunteer
   },
   Info: {
     screen: Info
