@@ -57,63 +57,63 @@ class ListCats extends Component {
     render() {
             return (
                 <ImageBackground style={styles.background} source={require('../assets/animalBackground.jpg')}>
-                <View style={styles.container}>
-                    {/* Menu Navigator Icon*/}
-                    <TouchableOpacity style={styles.menuBox} onPress={() => this.props.navigation.openDrawer()}>
-                        <Image style={styles.menuIcon} source={require('../assets/bars.png')} />
-                    </TouchableOpacity>
+                    <View style={styles.container}>
+                        {/* Menu Navigator Icon*/}
+                        <TouchableOpacity style={styles.menuBox} onPress={() => this.props.navigation.openDrawer()}>
+                            <Image style={styles.menuIcon} source={require('../assets/bars.png')} />
+                        </TouchableOpacity>
 
-                    <Text style={styles.title}>Cats</Text>
+                        <Text style={styles.title}>Cats</Text>
 
-                    {/* Scroller for Cat Profiles */}
-                    <ScrollView style={{flex: 1}}>
-                    {
-                        /* Map each Cat to a Single Card */
-                        this.props.cats.map( (cat, index) => {
-                            const cat_image = "http://animalguru.store/cats/" + cat.name + "-" + cat.color + ".jpg"
-                            return (
-                                <TouchableOpacity key={index} onPress={() => this.setCat(cat, cat_image)}>
-                                    <ImageBackground source={{uri: cat_image}} style={styles.card_image}>
-                                        <View style={styles.nameBackground}>
-                                            <View style={{backgroundColor: 'white', width: width-20, opacity: 0.8}}>
-                                                <Text style={styles.nameFont}>{cat.name}</Text>
+                        {/* Scroller for Cat Profiles */}
+                        <ScrollView style={{flex: 1}}>
+                        {
+                            /* Map each Cat to a Single Card */
+                            this.props.cats.map( (cat, index) => {
+                                const cat_image = "http://animalguru.store/cats/" + cat.name + "-" + cat.color + ".jpg"
+                                return (
+                                    <TouchableOpacity key={index} onPress={() => this.setCat(cat, cat_image)}>
+                                        <ImageBackground source={{uri: cat_image}} style={styles.card_image}>
+                                            <View style={styles.nameBackground}>
+                                                <View style={{backgroundColor: 'white', width: width-20, opacity: 0.8}}>
+                                                    <Text style={styles.nameFont}>{cat.name}</Text>
+                                                </View>
                                             </View>
-                                        </View>
-                                    </ImageBackground>
+                                        </ImageBackground>
+                                    </TouchableOpacity>
+                                )
+                            })
+                        }
+
+                        <Modal 
+                            animationType="slide"
+                            transparent={false}
+                            visible={this.state.modalView}
+                            onRequestClose={() => {}}>
+                            <View style={styles.container}>
+                                {/* Menu Navigator Icon*/}
+                                <TouchableOpacity style={styles.menuBox} onPress={() => this.goBack()}>
+                                    <Image style={styles.menuIcon} source={require('../assets/close.png')} />
                                 </TouchableOpacity>
-                            )
-                        })
-                    }
 
-                    <Modal 
-                        animationType="slide"
-                        transparent={false}
-                        visible={this.state.modalView}
-                        onRequestClose={() => {}}>
-                        <View style={styles.container}>
-                            {/* Menu Navigator Icon*/}
-                            <TouchableOpacity style={styles.menuBox} onPress={() => this.goBack()}>
-                                <Image style={styles.menuIcon} source={require('../assets/close.png')} />
-                            </TouchableOpacity>
-
-                            <View style={styles.card}>
-                                <Image style={{resizeMode: 'cover', height: height/3}} source={{uri: this.state.cat_image}} />
-                                <Text style={{fontSize: 36, textAlign: 'center'}}>{this.state.cat.name}</Text>
-                                <Text style={{fontSize: 20, marginLeft: 10}}>
-                                    Color: {this.state.cat.color} {'\n'}
-                                    Weight: {this.state.cat.weight} {'\n'}
-                                    Max Weight: {this.state.cat.fullWeight} {'\n'}
-                                    Sex: {this.state.cat.sex} {'\n'}
-                                    Housetrained: {this.state.cat.housetrained ? ('YES') : ('NO')} {'\n'}
-                                    Fixed: {this.state.cat.fix ? ('YES') : ('NO')} {'\n'}
-                                    Declawed: {this.state.cat.declawed ? ('YES') : ('NO')} {'\n'}
-                                    Adoption Fee: $50.00
-                                </Text>
+                                <View style={styles.card}>
+                                    <Image style={{resizeMode: 'cover', height: height/3}} source={{uri: this.state.cat_image}} />
+                                    <Text style={{fontSize: 36, textAlign: 'center'}}>{this.state.cat.name}</Text>
+                                    <Text style={{fontSize: 20, marginLeft: 10}}>
+                                        Color: {this.state.cat.color} {'\n'}
+                                        Weight: {this.state.cat.weight} {'\n'}
+                                        Max Weight: {this.state.cat.fullWeight} {'\n'}
+                                        Sex: {this.state.cat.sex} {'\n'}
+                                        Housetrained: {this.state.cat.housetrained ? ('YES') : ('NO')} {'\n'}
+                                        Fixed: {this.state.cat.fix ? ('YES') : ('NO')} {'\n'}
+                                        Declawed: {this.state.cat.declawed ? ('YES') : ('NO')} {'\n'}
+                                        Adoption Fee: $50.00
+                                    </Text>
+                                </View>
                             </View>
-                        </View>
-                    </Modal>
-                    </ScrollView>
-                </View>
+                        </Modal>
+                        </ScrollView>
+                    </View>
                 </ImageBackground>
             )
     }

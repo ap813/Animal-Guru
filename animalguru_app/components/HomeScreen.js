@@ -45,14 +45,13 @@ class HomeScreen extends Component {
 
                         <View style={{flex: 0.8, alignItems: 'center', opacity: 0.9, marginHorizontal: 10}}>
                             <Text style={{fontSize: 40, textDecorationLine: 'underline', marginTop: 20, marginBottom: 10, color: 'black'}}>Animal Guru</Text>
-                            <Text style={{fontSize: 20, marginTop: 10, marginHorizontal: 15, color: 'black'}}>
+                            <Text style={{fontSize: 20, marginTop: 10, marginHorizontal: 15, color: 'black', textAlign: 'center'}}>
                                 Welcome to Animal Guru, we're a no kill shelter that houses
                                 cats and dogs. Take a look around and see if you find any new
                                 friends.
                             </Text>
                         </View>
                 </View>
-        
             </ImageBackground>
         )
     }

@@ -57,63 +57,63 @@ class ListDogs extends Component {
         return (
 
             <ImageBackground style={styles.background} source={require('../assets/animalBackground.jpg')}>
-            <View style={styles.container}>
-                {/* Menu Navigator Icon*/}
-                <TouchableOpacity style={styles.menuBox} onPress={() => this.props.navigation.openDrawer()}>
-                    <Image style={styles.menuIcon} source={require('../assets/bars.png')} />
-                </TouchableOpacity>
+                <View style={styles.container}>
+                    {/* Menu Navigator Icon*/}
+                    <TouchableOpacity style={styles.menuBox} onPress={() => this.props.navigation.openDrawer()}>
+                        <Image style={styles.menuIcon} source={require('../assets/bars.png')} />
+                    </TouchableOpacity>
 
-                <Text style={styles.title}>Dogs</Text>
+                    <Text style={styles.title}>Dogs</Text>
 
-                {/* Scroller for Cat Profiles */}
-                <ScrollView style={{flex: 1}}>
-                {
-                    /* Map each Cat to a Single Card */
-                    this.props.dogs.map( (dog, index) => {
-                        const dog_image = "http://animalguru.store/dogs/" + dog.breed + "-" + dog.name + ".jpg"
-                        return (
-                            <TouchableOpacity key={index} onPress={() => this.setDog(dog, dog_image)}>
-                                <ImageBackground source={{uri: dog_image}} style={styles.card_image}>
-                                    <View style={styles.nameBackground}>
-                                        <View style={{backgroundColor: 'white', width: width-20, opacity: 0.8}}>
-                                            <Text style={styles.nameFont}>{dog.name}</Text>
+                    {/* Scroller for Cat Profiles */}
+                    <ScrollView style={{flex: 1}}>
+                    {
+                        /* Map each Cat to a Single Card */
+                        this.props.dogs.map( (dog, index) => {
+                            const dog_image = "http://animalguru.store/dogs/" + dog.breed + "-" + dog.name + ".jpg"
+                            return (
+                                <TouchableOpacity key={index} onPress={() => this.setDog(dog, dog_image)}>
+                                    <ImageBackground source={{uri: dog_image}} style={styles.card_image}>
+                                        <View style={styles.nameBackground}>
+                                            <View style={{backgroundColor: 'white', width: width-20, opacity: 0.8}}>
+                                                <Text style={styles.nameFont}>{dog.name}</Text>
+                                            </View>
                                         </View>
-                                    </View>
-                                </ImageBackground>
+                                    </ImageBackground>
+                                </TouchableOpacity>
+                            )
+                        })
+                    }
+
+                    <Modal 
+                        animationType="slide"
+                        transparent={false}
+                        visible={this.state.modalView}
+                        onRequestClose={() => {}}>
+                        <View style={styles.container}>
+                            {/* Menu Navigator Icon*/}
+                            <TouchableOpacity style={styles.menuBox} onPress={() => this.goBack()}>
+                                <Image style={styles.menuIcon} source={require('../assets/close.png')} />
                             </TouchableOpacity>
-                        )
-                    })
-                }
 
-                <Modal 
-                    animationType="slide"
-                    transparent={false}
-                    visible={this.state.modalView}
-                    onRequestClose={() => {}}>
-                    <View style={styles.container}>
-                        {/* Menu Navigator Icon*/}
-                        <TouchableOpacity style={styles.menuBox} onPress={() => this.goBack()}>
-                            <Image style={styles.menuIcon} source={require('../assets/close.png')} />
-                        </TouchableOpacity>
-
-                        <View style={styles.card}>
-                            <Image style={{resizeMode: 'cover', height: height/3}} source={{uri: this.state.dog_image}} />
-                            <Text style={{fontSize: 36, textAlign: 'center'}}>{this.state.dog.name}</Text>
-                            <Text style={{fontSize: 20, marginLeft: 10}}>
-                                Breed: {this.state.dog.breed} {'\n'}
-                                Color: {this.state.dog.color} {'\n'}
-                                Weight: {this.state.dog.weight} {'\n'}
-                                Max Weight: {this.state.dog.fullWeight} {'\n'}
-                                Sex: {this.state.dog.sex} {'\n'}
-                                Housetrained: {this.state.dog.housetrained ? ('YES') : ('NO')} {'\n'}
-                                Fixed: {this.state.dog.fix ? ('YES') : ('NO')} {'\n'}
-                                Adoption Fee: $75.00
-                            </Text>
+                            <View style={styles.card}>
+                                <Image style={{resizeMode: 'cover', height: height/3}} source={{uri: this.state.dog_image}} />
+                                <Text style={{fontSize: 36, textAlign: 'center'}}>{this.state.dog.name}</Text>
+                                <Text style={{fontSize: 20, marginLeft: 10}}>
+                                    Breed: {this.state.dog.breed} {'\n'}
+                                    Color: {this.state.dog.color} {'\n'}
+                                    Weight: {this.state.dog.weight} {'\n'}
+                                    Max Weight: {this.state.dog.fullWeight} {'\n'}
+                                    Sex: {this.state.dog.sex} {'\n'}
+                                    Housetrained: {this.state.dog.housetrained ? ('YES') : ('NO')} {'\n'}
+                                    Fixed: {this.state.dog.fix ? ('YES') : ('NO')} {'\n'}
+                                    Adoption Fee: $75.00
+                                </Text>
+                            </View>
                         </View>
-                    </View>
-                </Modal>
-                </ScrollView>
-            </View>
+                    </Modal>
+                    </ScrollView>
+                </View>
             </ImageBackground>
         )
     }
