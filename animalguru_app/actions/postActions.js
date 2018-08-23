@@ -1,19 +1,8 @@
 import { 
-    FETCH_POSTS,
     NEW_VOLUNTEER,
     GET_PUPPIES,
     GET_KITTENS
 } from './types'
-
-export const fetchPosts = () => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(post => dispatch({
-        type: FETCH_POSTS,
-        payload: post
-    }))
-    .catch(error => console.log(error))
-}
 
 // Make a new Volunteer
 export const createVolunteer = (postData) => dispatch => {
